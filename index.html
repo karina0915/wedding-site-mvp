@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Your Dream Wedding Website — AI-Powered · $9</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #faf8f6;
+    --surface:  #ffffff;
+    --border:   #e8e2da;
+    --text:     #2c241a;
+    --text-muted: #8a7e72;
+    --gold:     #c4a962;
+    --gold-lt:  #f7f2e3;
+    --rose:     #d4a9a4;
+    --rose-lt:  #fcf5f3;
+    --sage:     #a8b8a0;
+    --sage-lt:  #f2f6f0;
+    --ink:      #3a3530;
+    --radius:   14px;
+    --radius-sm: 8px;
+    --shadow:   0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+    --shadow-md: 0 8px 30px rgba(0,0,0,0.06);
+    --font-serif:  'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --font-sans:   'Inter', -apple-system, sans-serif;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(ellipse at 15% 20%, rgba(212,169,164,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 60%, rgba(196,169,98,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(168,184,160,0.06) 0%, transparent 50%);
+    pointer-events: none; z-index: 0;
+  }
+
+  /* ═══════════ HERO ═══════════ */
+  .hero {
+    position: relative; z-index: 1;
+    text-align: center;
+    padding: 64px 24px 48px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .hero .badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--gold-lt);
+    color: #8a7030;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: 52px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .hero .hero-sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 480px;
+    margin-left: auto; margin-right: auto;
+  }
+  .btn-hero {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 36px;
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 2px 12px rgba(44,36,26,0.18);
+  }
+  .btn-hero:hover { background: #1f1b17; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(44,36,26,0.25); }
+  .btn-hero:active { transform: translateY(0); }
+  .hero-note {
+    display: block;
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ═══════════ DIVIDER ═══════════ */
+  .section-divider {
+    display: flex; align-items: center; gap: 16px;
+    max-width: 200px; margin: 0 auto 8px;
+    opacity: 0.35;
+  }
+  .section-divider .line { flex:1; height: 0.5px; background: var(--gold); }
+  .section-divider .dot { font-size: 8px; color: var(--rose); }
+
+  /* ═══════════ GENERATOR SECTION ═══════════ */
+  .generator-section {
+    position: relative; z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+  }
+  .generator-label {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+  .main-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* ── Card Base ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+
+  /* ── Input Panel ── */
+  .input-panel {
+    position: sticky; top: 24px;
+  }
+  .input-panel .section-title {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .input-panel .section-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+  }
+
+  .form-group { margin-bottom: 13px; }
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    background: #fdfcfb;
+    transition: all 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(196,169,98,0.1);
+  }
+  .form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a7e72' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+
+  /* Color picker */
+  .color-presets { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 4px; }
+  .color-preset {
+    width: 30px; height: 30px; border-radius: 50%;
+    cursor: pointer; border: 2px solid transparent;
+    transition: all 0.2s; position: relative;
+  }
+  .color-preset:hover { transform: scale(1.1); }
+  .color-preset.selected {
+    border-color: var(--ink);
+    box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--ink);
+  }
+
+  /* Toggle */
+  .toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 7px 0; }
+  .toggle-row span { font-size: 13px; font-weight: 500; }
+  .toggle {
+    width: 44px; height: 26px; background: #d0c8bc; border-radius: 13px;
+    cursor: pointer; position: relative; transition: background 0.25s; flex-shrink: 0;
+  }
+  .toggle.on { background: var(--sage); }
+  .toggle::after {
+    content: ''; position: absolute;
+    width: 22px; height: 22px; background: #fff; border-radius: 50%;
+    top: 2px; left: 2px; transition: transform 0.25s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+  .toggle.on::after { transform: translateX(18px); }
+
+  .btn-generate {
+    width: 100%; padding: 13px; margin-top: 8px;
+    background: var(--ink); color: #fff;
+    border: none; border-radius: var(--radius-sm);
+    font-family: inherit; font-size: 14px; font-weight: 600;
+    letter-spacing: 0.3px; cursor: pointer;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-generate:hover { background: #1f1b17; }
+
+  /* ── Output Panel ── */
+  .output-area { display: flex; flex-direction: column; gap: 16px; }
+
+  .output-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow);
+    overflow: hidden; transition: box-shadow 0.3s;
+  }
+  .output-card:hover { box-shadow: var(--shadow-md); }
+  .output-card-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 20px; border-bottom: 1px solid var(--border);
+    background: #fdfcfb; gap: 12px;
+  }
+  .output-card-header .oc-title {
+    font-family: var(--font-serif); font-size: 16px; font-weight: 500;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .output-card-header .oc-icon { font-size: 18px; }
+  .btn-copy {
+    padding: 5px 12px; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.5px; text-transform: uppercase;
+    border: 1px solid var(--border); background: #fff;
+    color: var(--text-muted); border-radius: 6px;
+    cursor: pointer; font-family: inherit; transition: all 0.2s; white-space: nowrap;
+  }
+  .btn-copy:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .btn-copy.copied { background: var(--sage); color: #fff; border-color: var(--sage); }
+
+  .output-card-body {
+    padding: 16px 20px; font-family: var(--font-serif);
+    font-size: 14px; line-height: 1.8; color: var(--ink);
+    white-space: pre-wrap; max-height: 320px; overflow-y: auto;
+  }
+  .output-card-body.etsy-body { font-family: var(--font-sans); font-size: 13px; line-height: 1.7; color: #555; }
+  .output-card-body.tags-body { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    display: inline-block; padding: 5px 12px; background: #f7f3ec;
+    color: #6b5e4a; border-radius: 20px; font-size: 12px;
+    font-weight: 500; font-family: var(--font-sans);
+  }
+
+  /* Empty state */
+  .empty-output {
+    text-align: center; padding: 80px 40px; color: var(--text-muted);
+  }
+  .empty-output .empty-icon { font-size: 56px; margin-bottom: 12px; opacity: 0.5; }
+  .empty-output p { font-family: var(--font-serif); font-size: 17px; opacity: 0.7; }
+
+  /* ═══════════ POST-GENERATION INLINE CTA ═══════════ */
+  .inline-cta {
+    display: none;
+    text-align: center;
+    padding: 24px 20px;
+    background: linear-gradient(135deg, #fdfaf5, #faf5ed);
+    border: 1px solid var(--gold);
+    border-radius: var(--radius);
+    margin-top: 4px;
+  }
+  .inline-cta.visible { display: block; }
+  .inline-cta h3 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .inline-cta p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+  .btn-buy {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 32px;
+    background: #e87d4b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-buy:hover { background: #d46a38; transform: translateY(-1px); }
+
+  /* ═══════════ PRICING ═══════════ */
+  .pricing-section {
+    position: relative; z-index: 1;
+    max-width: 480px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+  .pricing-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 36px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .pricing-card .price {
+    font-family: var(--font-serif);
+    font-size: 56px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .pricing-card .price-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .pricing-card .feature-list {
+    text-align: left;
+    list-style: none;
+    margin-bottom: 24px;
+  }
+  .pricing-card .feature-list li {
+    padding: 6px 0;
+    font-size: 14px;
+    color: #4a4440;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .pricing-card .feature-list li::before {
+    content: '✓';
+    color: var(--sage);
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .btn-gumroad {
+    display: inline-flex; align-items: center; gap: 8px;
+    width: 100%;
+    padding: 14px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    text-decoration: none;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .btn-gumroad:hover { background: #222; transform: translateY(-1px); }
+  .gumroad-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+  .gumroad-note a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* ═══════════ FOOTER ═══════════ */
+  .site-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+
+  /* ═══════════ TOAST ═══════════ */
+  .toast {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    background: #2c241a; color: #fff;
+    padding: 10px 22px; border-radius: 8px;
+    font-size: 13px; font-weight: 500;
+    z-index: 200;
+    animation: toastIn 0.25s ease, toastOut 0.3s 1.2s ease forwards;
+    pointer-events: none;
+  }
+  @keyframes toastIn  { from { opacity:0; transform:translateX(-50%) translateY(8px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
+  @keyframes toastOut { to   { opacity:0; transform:translateX(-50%) translateY(-6px); } }
+
+  /* ═══════════ RESPONSIVE ═══════════ */
+  @media (max-width: 900px) {
+    .hero h1 { font-size: 36px; }
+    .main-container { grid-template-columns: 1fr; }
+    .input-panel { position: static; }
+  }
+  @media (max-width: 500px) {
+    .hero { padding: 40px 16px 32px; }
+    .hero h1 { font-size: 30px; }
+    .form-row, .form-row-3 { grid-template-columns: 1fr; }
+    .output-card-body { font-size: 13px; padding: 12px 14px; }
+    .output-card-header { padding: 10px 14px; }
+    .pricing-card { padding: 24px 20px; }
+    .pricing-card .price { font-size: 44px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="badge">✨ Digital Download</div>
+  <h1>Your Dream Wedding&nbsp;Website</h1>
+  <p class="hero-sub">
+    AI-powered invitation copy, RSVP cards &amp; details card — all generated in seconds. Download the complete digital wedding site, ready to share.
+  </p>
+  <a href="#generator" class="btn-hero">✨ Create Wedding Website</a>
+  <span class="hero-note">Free to try &nbsp;·&nbsp; $9 to download the full site</span>
+</section>
+
+<!-- ═══════════ DIVIDER ═══════════ -->
+<div class="section-divider">
+  <span class="line"></span><span class="dot">❦</span><span class="line"></span>
+</div>
+
+<!-- ═══════════ GENERATOR ═══════════ -->
+<section class="generator-section" id="generator">
+  <div class="generator-label">Free AI Copy Generator</div>
+
+  <div class="main-container">
+
+    <!-- INPUT PANEL -->
+    <div class="card input-panel">
+      <div class="section-title">Your Wedding</div>
+      <div class="section-desc">Fill in your details &dash; takes 30 seconds</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input id="brideName" type="text" placeholder="e.g. Emma" oninput="autoSave()">
+        </div>
+        <div class="form-group">
+          <label>Partner's Name</label>
+          <input id="groomName" type="text" placeholder="e.g. James" oninput="autoSave()">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Wedding Date</label>
+        <input id="weddingDate" type="text" placeholder="e.g. June 14, 2026" oninput="autoSave()">
+      </div>
+
+      <div class="form-group">
+        <label>Venue</label>
+        <input id="weddingVenue" type="text" placeholder="e.g. Château de Vaux-le-Vicomte, France" oninput="autoSave()">
+      </div>
+
+      <div class="form-group">
+        <label>Style</label>
+        <select id="weddingStyle" onchange="autoSave()">
+          <option value="french">🇫🇷 French Romantic</option>
+          <option value="minimal">🤍 Minimal Elegant</option>
+          <option value="boho">🌿 Bohemian</option>
+          <option value="vintage">🕰 Vintage</option>
+          <option value="garden">🌸 Garden Floral</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Color Palette</label>
+        <div class="color-presets" id="colorPresets">
+          <div class="color-preset" data-color="Blush & Gold" style="background:#e8d5d0;" title="Blush & Gold"></div>
+          <div class="color-preset" data-color="Sage & Cream" style="background:#b8c5b0;" title="Sage & Cream"></div>
+          <div class="color-preset" data-color="Dusty Blue & White" style="background:#b0c4d8;" title="Dusty Blue & White"></div>
+          <div class="color-preset" data-color="Terracotta & Beige" style="background:#d4a38c;" title="Terracotta & Beige"></div>
+          <div class="color-preset" data-color="Lavender & Grey" style="background:#c8c0d8;" title="Lavender & Grey"></div>
+          <div class="color-preset" data-color="Black & White" style="background:#3a3a3a;" title="Black & White"></div>
+          <div class="color-preset" data-color="Champagne & Ivory" style="background:#f0e6d3;" title="Champagne & Ivory"></div>
+          <div class="color-preset" data-color="Forest Green & Gold" style="background:#5a7a5a;" title="Forest Green & Gold"></div>
+        </div>
+        <input type="hidden" id="colorScheme" value="Blush & Gold">
+      </div>
+
+      <div class="toggle-row">
+        <span>📩 Include RSVP Card</span>
+        <div class="toggle on" id="toggleRSVP" onclick="toggleSwitch('toggleRSVP');autoSave();"></div>
+      </div>
+      <div class="toggle-row">
+        <span>📋 Include Details Card</span>
+        <div class="toggle on" id="toggleDetails" onclick="toggleSwitch('toggleDetails');autoSave();"></div>
+      </div>
+
+      <button class="btn-generate" onclick="generateAll()">
+        <span class="sparkle">✨</span> Generate My Copy
+      </button>
+    </div>
+
+    <!-- OUTPUT PANEL -->
+    <div class="output-area" id="outputArea">
+      <div class="empty-output" id="emptyOutput">
+        <div class="empty-icon">💌</div>
+        <p>Fill in your details and click "Generate My Copy"<br><span style="font-size:14px;">to see your AI-generated wedding content</span></p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- INLINE CTA — appears after generation -->
+  <div class="inline-cta" id="inlineCta">
+    <h3>Love your wedding copy?</h3>
+    <p>Download the complete digital wedding website — all cards, all formats, ready&nbsp;to&nbsp;share.</p>
+    <a href="https://gumroad.com/l/wedding-site-template" target="_blank" class="btn-buy">🛒 Get the Full Site — $9</a>
+  </div>
+</section>
+
+<!-- ═══════════ PRICING ═══════════ -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-card">
+    <div class="price">$9</div>
+    <div class="price-label">One-time purchase · Lifetime access</div>
+
+    <ul class="feature-list">
+      <li>Complete digital wedding website (HTML)</li>
+      <li>Wedding invitation, RSVP &amp; details cards</li>
+      <li>5 style variants with your chosen colors</li>
+      <li>Editable in any text editor — no tools needed</li>
+      <li>Mobile-friendly &amp; print-ready</li>
+    </ul>
+
+    <a href="https://gumroad.com/l/wedding-site-template" target="_blank" class="btn-gumroad">
+      Buy on Gumroad — $9
+    </a>
+    <div class="gumroad-note">
+      Instant download after purchase. <a href="https://gumroad.com/l/wedding-site-template" target="_blank">Questions? Message me on Gumroad.</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  &copy; 2026 Wedding Site Templates · Made with love
+</footer>
+
+<script>
+  // ── Color Preset Selection ──
+  document.getElementById('colorPresets').addEventListener('click', function(e) {
+    const preset = e.target.closest('.color-preset');
+    if (!preset) return;
+    document.querySelectorAll('.color-preset').forEach(p => p.classList.remove('selected'));
+    preset.classList.add('selected');
+    document.getElementById('colorScheme').value = preset.dataset.color;
+    autoSave();
+  });
+  document.querySelector('.color-preset[data-color="Blush & Gold"]').classList.add('selected');
+
+  // ── Toggle Switch ──
+  function toggleSwitch(id) {
+    document.getElementById(id).classList.toggle('on');
+  }
+
+  // ── Get Input Values ──
+  function getInputs() {
+    return {
+      bride:     document.getElementById('brideName').value.trim() || 'Emma',
+      groom:     document.getElementById('groomName').value.trim() || 'James',
+      date:      document.getElementById('weddingDate').value.trim() || 'June 14, 2026',
+      venue:     document.getElementById('weddingVenue').value.trim() || 'Château de Vaux-le-Vicomte',
+      style:     document.getElementById('weddingStyle').value,
+      color:     document.getElementById('colorScheme').value,
+      rsvp:      document.getElementById('toggleRSVP').classList.contains('on'),
+      details:   document.getElementById('toggleDetails').classList.contains('on'),
+    };
+  }
+
+  // ── Style Config ──
+  const styleConfig = {
+    french: {
+      tone: 'romantic and timeless',
+      adjectives: ['elegant', 'je ne sais quoi', 'old-world charm', 'Parisian romance'],
+      paletteNote: 'soft blush tones with champagne gold accents',
+      canvaStyle: 'Serif fonts (Cormorant Garamond + Great Vibes), double-line gold borders, delicate fleur-de-lis or botanical line art, generous white space, muted blush and cream palette',
+      imgStyle: 'French château garden, soft diffused light, film photography style, ivory roses and lavender, vintage gold detailing, editorial elegance',
+    },
+    minimal: {
+      tone: 'clean and modern',
+      adjectives: ['understated', 'refined', 'contemporary', 'timeless simplicity'],
+      paletteNote: 'neutral tones with subtle contrast',
+      canvaStyle: 'Sans-serif fonts (Inter or Montserrat), asymmetric layouts, bold typography, minimal ornament, monochrome with one accent color, lots of negative space',
+      imgStyle: 'clean architectural setting, soft directional light, minimalist floral arrangement, modern sculpture, creamy neutrals, intentional negative space',
+    },
+    boho: {
+      tone: 'free-spirited and earthy',
+      adjectives: ['organic', 'whimsical', 'earthy', 'wildflower romance'],
+      paletteNote: 'warm terracotta, dried grass, and dusty sage tones',
+      canvaStyle: 'Hand-drawn fonts (Amatic SC + Cormorant), watercolor floral wreaths, pampas grass motifs, kraft paper textures, macramé-inspired borders, warm earthy tones',
+      imgStyle: 'golden hour in a wildflower meadow, pampas grass and dried palms, macramé backdrop, dreamy boho styling, warm sun flare, organic textures',
+    },
+    vintage: {
+      tone: 'nostalgic and romantic',
+      adjectives: ['antique', 'nostalgic', 'old-world', 'heirloom'],
+      paletteNote: 'sepia, dusty rose, and aged paper tones',
+      canvaStyle: 'Victorian-inspired serif fonts, ornate filigree corners, vintage botanical engravings, parchment texture backgrounds, muted sepia and dusty rose, lace-pattern borders',
+      imgStyle: 'antique lace and pearls, vintage pocket watch, pressed flowers, sepia-toned film, soft vignette, heirloom jewelry, Victorian botanical illustration style',
+    },
+    garden: {
+      tone: 'fresh and botanical',
+      adjectives: ['lush', 'blooming', 'natural', 'enchanted garden'],
+      paletteNote: 'soft sage green, blush pink, and fresh ivory',
+      canvaStyle: 'Script + serif font pairing, watercolor floral borders, botanical wreath frames, eucalyptus and rose motifs, fresh green and blush palette, nature-inspired layouts',
+      imgStyle: 'lush garden setting, dappled sunlight through leaves, overflowing wildflower arrangements, English garden aesthetic, macro floral details, fresh botanical still life',
+    },
+  };
+
+  // ── Generate Invitation Copy ──
+  function generateInvitation(inp) {
+    const templates = {
+      french: [
+        "Together with their families\n" + inp.bride + " & " + inp.groom + "\nrequest the pleasure of your company\nat their marriage celebration\n" + inp.date + "\nat " + inp.venue + "\n\nReception to follow",
+        "With joyful hearts\n" + inp.bride + " and " + inp.groom + "\ninvite you to share in their happiness\nas they exchange vows\non " + inp.date + "\n" + inp.venue + "\n\nDinner & dancing to follow",
+      ],
+      minimal: [
+        inp.bride + " & " + inp.groom + "\n\nyou are invited to celebrate\ntheir wedding\n\n" + inp.date + "\n" + inp.venue + "\n\nreception to follow",
+        inp.bride + "\n&\n" + inp.groom + "\n\nrequest the honor of your presence\nat their wedding\n\n" + inp.date + " · " + inp.venue,
+      ],
+      boho: [
+        "Join us under the open sky\nas " + inp.bride + " & " + inp.groom + "\nbegin their greatest adventure\n\n" + inp.date + "\n" + inp.venue + "\n\nFeasting, dancing & celebrating to follow",
+        inp.bride + " & " + inp.groom + "\n\ntogether with their families\ninvite you to a weekend of love & laughter\n\n" + inp.date + "\nat " + inp.venue + "\n\nWild hearts, forever love",
+      ],
+      vintage: [
+        inp.bride + " & " + inp.groom + "\nrequest the honour of your presence\nat their marriage\non " + inp.date + "\nat " + inp.venue + "\n\nCarriage ride & reception to follow",
+        "The pleasure of your company\nis requested at the marriage of\n" + inp.bride + "\nto\n" + inp.groom + "\n" + inp.date + " · " + inp.venue + "\n\nEvening reception to follow",
+      ],
+      garden: [
+        inp.bride + " & " + inp.groom + "\n\nwere bloomed by love\nand invite you to witness\ntheir garden wedding\n\n" + inp.date + "\n" + inp.venue + "\n\nGarden party reception to follow",
+        "Among the flowers and trees\n" + inp.bride + " and " + inp.groom + "\nwill say \"I do\"\n\nPlease join us\n" + inp.date + "\nat " + inp.venue + "\n\nNature, love & celebration",
+      ],
+    };
+    const picks = templates[inp.style] || templates.french;
+    const main = picks[Math.floor(Math.random() * picks.length)];
+
+    let extra = '';
+    if (inp.rsvp) {
+      extra += "\n\n─ ✂ ─\n\nRSVP\nKindly respond by [Date]\nName: _______________\n☐ Joyfully accepts  ☐ Regretfully declines\nNumber attending: _____\nPlease RSVP at [website/email]";
+    }
+    if (inp.details) {
+      extra += "\n\n─ ✂ ─\n\nDETAILS\nAttire: [Dress Code]\nAccommodation: [Hotel recommendations]\nDirections: [Venue address & parking]\nGift Registry: [Registry link]";
+    }
+    return { main: main.trim(), extra: extra.trim() };
+  }
+
+  // ── Generate Canva Suggestions ──
+  function generateCanva(inp) {
+    const cfg = styleConfig[inp.style];
+    return "[CANVA LAYOUT GUIDE]\n━━━━━━━━━━━━━━━━━━━━\nStyle: " + inp.style.toUpperCase() +
+      "\nColor Palette: " + inp.color +
+      "\n\n📐 Typography:\n" + cfg.canvaStyle.split(',')[0].trim() +
+      "\n\n🎨 Color Scheme:\nPrimary + secondary + accent colors, 3 colors max recommended, " + cfg.paletteNote +
+      "\n\n🖼 Layout Structure:\n• Main Card (5×7 inch): Couple names centered large + date & venue bottom aligned\n• RSVP Card (3.5×5 inch): Left-aligned clean layout with blank space for handwritten checkmarks\n• Details Card (3.5×5 inch): Icon + info list layout" +
+      "\n\n✨ Canva Search Keywords:\n\"elegant wedding invitation template\"\n\"floral wedding suite Canva\"\n\"minimal wedding card template\"\n\"" + inp.style + " wedding stationery\"" +
+      "\n\n📏 Margin Guide:\nKeep 0.5 inch safe margin on all four sides, keep all text within the safe zone";
+  }
+
+  // ── Generate AI Image Prompt ──
+  function generateImagePrompt(inp) {
+    const cfg = styleConfig[inp.style];
+    const prompts = [
+      "A luxurious flat-lay wedding stationery photoshoot, " + cfg.imgStyle + ". Wedding invitation suite with " + inp.color.toLowerCase() + " color palette, styled with fresh flowers and silk ribbons on a textured surface. Soft natural window light, shallow depth of field, editorial composition. High-end stationery photography style. --ar 4:5 --style raw",
+      "Close-up detail shot of an elegant wedding invitation card, " + cfg.adjectives.slice(0,2).join(' and ') + " aesthetic. " + inp.color + " tones, fine letterpress texture on cotton paper, paired with " + cfg.imgStyle.split(',')[0] + ". Warm golden hour backlight, macro lens effect, very detailed. --ar 3:4 --style raw",
+      "A complete wedding invitation suite styled on a " + (inp.style === 'boho' ? 'wooden' : inp.style === 'vintage' ? 'antique' : 'marble') + " surface. Main invitation, RSVP card, details card, and vellum wrap, tied with a " + cfg.paletteNote.split(',')[0] + ". " + cfg.imgStyle + ". Professional stationery photography, Pinterest-worthy composition. --ar 1:1 --style raw",
+    ];
+    return prompts.join('\n\n');
+  }
+
+  // ── Generate Etsy Title ──
+  function generateEtsyTitle(inp) {
+    const cfg = styleConfig[inp.style];
+    const styleLabel = { french:'French Romantic', minimal:'Minimal Elegant', boho:'Bohemian', vintage:'Vintage', garden:'Garden Floral' }[inp.style];
+    const titles = [
+      styleLabel + " Wedding Invitation Template, Edit in Canva, " + cfg.adjectives[0] + " " + cfg.adjectives[1] + " Suite, Instant Download, DIY Printable Wedding Stationery",
+      styleLabel + " Wedding Invitation Set | Editable Canva Template | " + cfg.adjectives[0] + " Design | Digital Download | RSVP + Details Card Included",
+      "Customizable " + styleLabel + " Wedding Invitation, " + inp.color + " Palette, Editable in Canva, Printable Wedding Suite with RSVP & Details Card",
+    ];
+    return titles[Math.floor(Math.random() * titles.length)];
+  }
+
+  // ── Generate Etsy Description ──
+  function generateEtsyDescription(inp) {
+    const cfg = styleConfig[inp.style];
+    const styleLabel = { french:'French Romantic', minimal:'Minimal Elegant', boho:'Bohemian', vintage:'Vintage', garden:'Garden Floral' }[inp.style];
+    const rsvpNote = inp.rsvp ? '\n✓ Matching RSVP card template\n✓ Guest names & meal choice editable' : '';
+    const detailsNote = inp.details ? '\n✓ Details card for venue, attire & registry info' : '';
+
+    return "[" + styleLabel + " Wedding Invitation Template — Editable in Canva]\n\n" +
+      "Create stunning, professional wedding invitations in minutes — no design experience needed. This " + cfg.adjectives[0] + " and " + cfg.adjectives[1] + " template is fully customizable in Canva (free account works perfectly).\n\n" +
+      "✨ WHAT YOU GET:\n✓ Editable 5×7 inch wedding invitation template\n✓ " + inp.color + " color scheme, easily customizable" + rsvpNote + detailsNote + "\n✓ Instant download — access within minutes of purchase\n✓ Print at home or use a professional printer\n✓ Works with Canva Free (no Pro subscription needed)\n\n" +
+      "🎨 TEMPLATE FEATURES:\n• " + cfg.canvaStyle.split(',')[0].trim() + " typography\n• " + (cfg.canvaStyle.split(',')[1] ? cfg.canvaStyle.split(',')[1].trim() : 'Elegant layout') + "\n• " + cfg.paletteNote + "\n• Print-ready 300 DPI, CMYK color profile\n• PDF, JPG & PNG formats included\n\n" +
+      "💻 HOW IT WORKS:\n1. Purchase & download the PDF instruction file\n2. Click the Canva template link\n3. Customize names, date, colors, and fonts\n4. Download your files and print!\n\n" +
+      "Perfect for " + styleLabel.toLowerCase() + " weddings, intimate ceremonies, and elegant celebrations.\n\n📩 Questions? Message me — I'm happy to help!";
+  }
+
+  // ── Generate Tags ──
+  function generateTags(inp) {
+    const cfg = styleConfig[inp.style];
+    const styleLabel = { french:'French Wedding', minimal:'Minimal Wedding', boho:'Boho Wedding', vintage:'Vintage Wedding', garden:'Garden Wedding' }[inp.style];
+    const base = [
+      styleLabel + " Invitation", 'Editable Canva Template', 'DIY Wedding Stationery',
+      'Printable Wedding Suite', 'Wedding Invitation ' + inp.color.split('&')[0].trim(),
+      'Instant Download Wedding', styleLabel + " Suite", 'RSVP Card Template',
+      'Digital Wedding Invite', 'Wedding Invitation Set', 'Elegant Wedding Card',
+      'Bridal Shower Invite', cfg.adjectives[0] + ' Wedding',
+    ];
+    return base.slice(0, 13);
+  }
+
+  // ── Render Output ──
+  function generateAll() {
+    const inp = getInputs();
+    const inv = generateInvitation(inp);
+    const canva = generateCanva(inp);
+    const imgPrompts = generateImagePrompt(inp);
+    const etsyTitle = generateEtsyTitle(inp);
+    const etsyDesc = generateEtsyDescription(inp);
+    const tags = generateTags(inp);
+
+    const outputArea = document.getElementById('outputArea');
+    outputArea.innerHTML = '';
+
+    const cards = [
+      { icon: '💌', title: 'Wedding Invitation Copy', body: inv.main + (inv.extra ? '\n' + inv.extra : ''), cls: '' },
+      { icon: '🎨', title: 'Canva Layout Suggestions', body: canva, cls: '' },
+      { icon: '📸', title: 'AI Image Generation Prompts', body: imgPrompts, cls: '' },
+      { icon: '🏷', title: 'Etsy Product Title', body: etsyTitle, cls: 'etsy-body' },
+      { icon: '📝', title: 'Etsy Product Description', body: etsyDesc, cls: 'etsy-body' },
+      { icon: '#️⃣', title: '13 Etsy Keyword Tags', body: tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('\n'), cls: 'tags-body', isHtml: true },
+    ];
+
+    cards.forEach(function(c, idx) {
+      const card = document.createElement('div');
+      card.className = 'output-card';
+      card.innerHTML = '<div class="output-card-header">' +
+        '<div class="oc-title"><span class="oc-icon">' + c.icon + '</span> ' + c.title + '</div>' +
+        '<button class="btn-copy" data-copy-idx="' + idx + '" onclick="copySection(' + idx + ', this)">📋 Copy</button>' +
+        '</div>' +
+        '<div class="output-card-body ' + c.cls + '">' + (c.isHtml ? c.body : escapeHtmlKeepBreaks(c.body)) + '</div>';
+      outputArea.appendChild(card);
+    });
+
+    outputArea._data = cards;
+    document.getElementById('emptyOutput').style.display = 'none';
+
+    // Show inline CTA after generation
+    document.getElementById('inlineCta').classList.add('visible');
+
+    // Scroll to output
+    outputArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function escapeHtmlKeepBreaks(text) {
+    return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+  }
+
+  // ── Copy ──
+  function copySection(idx, btn) {
+    const data = document.getElementById('outputArea')._data;
+    if (!data || !data[idx]) return;
+    const raw = data[idx].isHtml
+      ? data[idx].body.replace(/<[^>]+>/g, '').replace(/\n+/g, '\n').trim()
+      : data[idx].body;
+
+    navigator.clipboard.writeText(raw).then(function() {
+      btn.textContent = '✓ Copied';
+      btn.classList.add('copied');
+      setTimeout(function() { btn.textContent = '📋 Copy'; btn.classList.remove('copied'); }, 1800);
+    }).catch(function() {
+      const ta = document.createElement('textarea');
+      ta.value = raw;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent = '✓ Copied';
+      btn.classList.add('copied');
+      setTimeout(function() { btn.textContent = '📋 Copy'; btn.classList.remove('copied'); }, 1800);
+    });
+  }
+
+  // ── Toast ──
+  function showToast(msg) {
+    const old = document.querySelector('.toast');
+    if (old) old.remove();
+    const t = document.createElement('div');
+    t.className = 'toast';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(function() { t.remove(); }, 1700);
+  }
+
+  // ── Smooth scroll for hero CTA ──
+  document.querySelector('.btn-hero').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('generator').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // ── localStorage ──
+  function autoSave() {
+    const data = {
+      bride: document.getElementById('brideName').value,
+      groom: document.getElementById('groomName').value,
+      date: document.getElementById('weddingDate').value,
+      venue: document.getElementById('weddingVenue').value,
+      style: document.getElementById('weddingStyle').value,
+      color: document.getElementById('colorScheme').value,
+      rsvp: document.getElementById('toggleRSVP').classList.contains('on'),
+      details: document.getElementById('toggleDetails').classList.contains('on'),
+    };
+    localStorage.setItem('wedding_assistant_inputs', JSON.stringify(data));
+  }
+
+  function loadSaved() {
+    try {
+      const raw = localStorage.getItem('wedding_assistant_inputs');
+      if (!raw) return;
+      const d = JSON.parse(raw);
+      if (d.bride)   document.getElementById('brideName').value = d.bride;
+      if (d.groom)   document.getElementById('groomName').value = d.groom;
+      if (d.date)    document.getElementById('weddingDate').value = d.date;
+      if (d.venue)   document.getElementById('weddingVenue').value = d.venue;
+      if (d.style)   document.getElementById('weddingStyle').value = d.style;
+      if (d.color) {
+        document.getElementById('colorScheme').value = d.color;
+        document.querySelectorAll('.color-preset').forEach(function(p) {
+          p.classList.toggle('selected', p.dataset.color === d.color);
+        });
+      }
+      if (d.rsvp !== undefined) document.getElementById('toggleRSVP').classList.toggle('on', d.rsvp);
+      if (d.details !== undefined) document.getElementById('toggleDetails').classList.toggle('on', d.details);
+    } catch(e) {}
+  }
+
+  loadSaved();
+</script>
+
+</body>
+</html>
