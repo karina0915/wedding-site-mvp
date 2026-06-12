@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Create Your Dream Wedding Website — AI-Powered · $9</title>
+<title>Wedding Seller AI — Generate Etsy Listings in Seconds</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -80,9 +80,15 @@
     font-size: 16px;
     color: var(--text-muted);
     line-height: 1.6;
-    margin-bottom: 28px;
-    max-width: 480px;
+    margin-bottom: 10px;
+    max-width: 520px;
     margin-left: auto; margin-right: auto;
+  }
+  .hero .hero-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    opacity: 0.75;
+    margin-bottom: 28px;
   }
   .btn-hero {
     display: inline-flex; align-items: center; gap: 10px;
@@ -335,6 +341,42 @@
   }
   .btn-buy:hover { background: #d46a38; transform: translateY(-1px); }
 
+  /* ═══════════ WHY SELLERS SECTION ═══════════ */
+  .why-section {
+    position: relative; z-index: 1;
+    max-width: 600px;
+    margin: 48px auto 32px;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .why-section h2 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: left;
+  }
+  .why-grid .why-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: #4a4440;
+  }
+  .why-grid .why-item .why-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
   /* ═══════════ PRICING ═══════════ */
   .pricing-section {
     position: relative; z-index: 1;
@@ -448,6 +490,7 @@
     .output-card-header { padding: 10px 14px; }
     .pricing-card { padding: 24px 20px; }
     .pricing-card .price { font-size: 44px; }
+    .why-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -455,13 +498,14 @@
 
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
-  <div class="badge">✨ Digital Download</div>
-  <h1>Your Dream Wedding&nbsp;Website</h1>
+  <div class="badge">✨ Etsy Seller Tool</div>
+  <h1>Wedding Seller AI</h1>
   <p class="hero-sub">
-    AI-powered invitation copy, RSVP cards &amp; details card — all generated in seconds. Download the complete digital wedding site, ready to share.
+    Generate Etsy titles, descriptions, SEO tags, Canva layout ideas, AI image prompts, and wedding copy in seconds.
   </p>
-  <a href="#generator" class="btn-hero">✨ Create Wedding Website</a>
-  <span class="hero-note">Free to try &nbsp;·&nbsp; $9 to download the full site</span>
+  <p class="hero-desc">Built for Etsy wedding template sellers who want to create listings faster and sell more.</p>
+  <a href="#generator" class="btn-hero">✨ Generate Etsy Listing</a>
+  <span class="hero-note">Free to try &nbsp;·&nbsp; $9 Lifetime Access</span>
 </section>
 
 <!-- ═══════════ DIVIDER ═══════════ -->
@@ -471,14 +515,14 @@
 
 <!-- ═══════════ GENERATOR ═══════════ -->
 <section class="generator-section" id="generator">
-  <div class="generator-label">Free AI Copy Generator</div>
+  <div class="generator-label">Free Etsy Listing Generator</div>
 
   <div class="main-container">
 
     <!-- INPUT PANEL -->
     <div class="card input-panel">
-      <div class="section-title">Your Wedding</div>
-      <div class="section-desc">Fill in your details &dash; takes 30 seconds</div>
+      <div class="section-title">Etsy Listing Details</div>
+      <div class="section-desc">Fill in the product info &dash; takes 30 seconds</div>
 
       <div class="form-row">
         <div class="form-group">
@@ -499,6 +543,19 @@
       <div class="form-group">
         <label>Venue</label>
         <input id="weddingVenue" type="text" placeholder="e.g. Château de Vaux-le-Vicomte, France" oninput="autoSave()">
+      </div>
+
+      <div class="form-group">
+        <label>Product Type</label>
+        <select id="productType" onchange="autoSave()">
+          <option value="wedding-invitation">Wedding Invitation</option>
+          <option value="save-the-date">Save The Date</option>
+          <option value="rsvp-card">RSVP Card</option>
+          <option value="details-card">Details Card</option>
+          <option value="bridal-shower">Bridal Shower Invite</option>
+          <option value="baby-shower">Baby Shower Invite</option>
+          <option value="wedding-website">Wedding Website Template</option>
+        </select>
       </div>
 
       <div class="form-group">
@@ -537,7 +594,7 @@
       </div>
 
       <button class="btn-generate" onclick="generateAll()">
-        <span class="sparkle">✨</span> Generate My Copy
+        <span class="sparkle">✨</span> Generate Etsy Listing
       </button>
     </div>
 
@@ -545,7 +602,7 @@
     <div class="output-area" id="outputArea">
       <div class="empty-output" id="emptyOutput">
         <div class="empty-icon">💌</div>
-        <p>Fill in your details and click "Generate My Copy"<br><span style="font-size:14px;">to see your AI-generated wedding content</span></p>
+        <p>Fill in your details and click "Generate Etsy Listing"<br><span style="font-size:14px;">to get your complete Etsy listing content</span></p>
       </div>
     </div>
 
@@ -553,9 +610,20 @@
 
   <!-- INLINE CTA — appears after generation -->
   <div class="inline-cta" id="inlineCta">
-    <h3>Love your wedding copy?</h3>
-    <p>Download the complete digital wedding website — all cards, all formats, ready&nbsp;to&nbsp;share.</p>
-    <a href="https://gumroad.com/l/wedding-site-template" target="_blank" class="btn-buy">🛒 Get the Full Site — $9</a>
+    <h3>Ready to save hours on every listing?</h3>
+    <p>Unlock unlimited generations — titles, descriptions, SEO tags, Canva ideas, image prompts, and wedding copy.</p>
+    <a href="https://gumroad.com/l/wedding-site-template" target="_blank" class="btn-buy">🔓 Unlock Wedding Seller AI — $9</a>
+  </div>
+</section>
+
+<!-- ═══════════ WHY ETSY SELLERS ─══════════ -->
+<section class="why-section">
+  <h2>Why Etsy Sellers Love It</h2>
+  <div class="why-grid">
+    <div class="why-item"><span class="why-icon">⚡</span> Save 1–2 hours per listing</div>
+    <div class="why-item"><span class="why-icon">🔍</span> Improve Etsy SEO instantly</div>
+    <div class="why-item"><span class="why-icon">💡</span> Generate product ideas faster</div>
+    <div class="why-item"><span class="why-icon">✍️</span> No copywriting experience needed</div>
   </div>
 </section>
 
@@ -563,27 +631,29 @@
 <section class="pricing-section" id="pricing">
   <div class="pricing-card">
     <div class="price">$9</div>
-    <div class="price-label">One-time purchase · Lifetime access</div>
+    <div class="price-label">Lifetime Access · One-time purchase. Unlimited listing generations.</div>
 
     <ul class="feature-list">
-      <li>Complete digital wedding website (HTML)</li>
-      <li>Wedding invitation, RSVP &amp; details cards</li>
-      <li>5 style variants with your chosen colors</li>
-      <li>Editable in any text editor — no tools needed</li>
-      <li>Mobile-friendly &amp; print-ready</li>
+      <li>Unlimited Etsy listing generations</li>
+      <li>SEO-optimized titles and descriptions</li>
+      <li>13 high-converting Etsy tags</li>
+      <li>Canva layout suggestions</li>
+      <li>AI image prompts</li>
+      <li>Wedding copy generation</li>
+      <li>Future updates included</li>
     </ul>
 
     <a href="https://gumroad.com/l/wedding-site-template" target="_blank" class="btn-gumroad">
-      Buy on Gumroad — $9
+      Unlock Wedding Seller AI — $9
     </a>
     <div class="gumroad-note">
-      Instant download after purchase. <a href="https://gumroad.com/l/wedding-site-template" target="_blank">Questions? Message me on Gumroad.</a>
+      Perfect for Etsy sellers who want to save hours and increase sales. <a href="https://gumroad.com/l/wedding-site-template" target="_blank">Questions? Message me on Gumroad.</a>
     </div>
   </div>
 </section>
 
 <footer class="site-footer">
-  &copy; 2026 Wedding Site Templates · Made with love
+  &copy; 2026 Wedding Seller AI · Built for Etsy sellers
 </footer>
 
 <script>
@@ -606,14 +676,15 @@
   // ── Get Input Values ──
   function getInputs() {
     return {
-      bride:     document.getElementById('brideName').value.trim() || 'Emma',
-      groom:     document.getElementById('groomName').value.trim() || 'James',
-      date:      document.getElementById('weddingDate').value.trim() || 'June 14, 2026',
-      venue:     document.getElementById('weddingVenue').value.trim() || 'Château de Vaux-le-Vicomte',
-      style:     document.getElementById('weddingStyle').value,
-      color:     document.getElementById('colorScheme').value,
-      rsvp:      document.getElementById('toggleRSVP').classList.contains('on'),
-      details:   document.getElementById('toggleDetails').classList.contains('on'),
+      bride:       document.getElementById('brideName').value.trim() || 'Emma',
+      groom:       document.getElementById('groomName').value.trim() || 'James',
+      date:        document.getElementById('weddingDate').value.trim() || 'June 14, 2026',
+      venue:       document.getElementById('weddingVenue').value.trim() || 'Château de Vaux-le-Vicomte',
+      productType: document.getElementById('productType').value,
+      style:       document.getElementById('weddingStyle').value,
+      color:       document.getElementById('colorScheme').value,
+      rsvp:        document.getElementById('toggleRSVP').classList.contains('on'),
+      details:     document.getElementById('toggleDetails').classList.contains('on'),
     };
   }
 
@@ -771,12 +842,12 @@
     outputArea.innerHTML = '';
 
     const cards = [
-      { icon: '💌', title: 'Wedding Invitation Copy', body: inv.main + (inv.extra ? '\n' + inv.extra : ''), cls: '' },
-      { icon: '🎨', title: 'Canva Layout Suggestions', body: canva, cls: '' },
-      { icon: '📸', title: 'AI Image Generation Prompts', body: imgPrompts, cls: '' },
       { icon: '🏷', title: 'Etsy Product Title', body: etsyTitle, cls: 'etsy-body' },
       { icon: '📝', title: 'Etsy Product Description', body: etsyDesc, cls: 'etsy-body' },
-      { icon: '#️⃣', title: '13 Etsy Keyword Tags', body: tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('\n'), cls: 'tags-body', isHtml: true },
+      { icon: '#️⃣', title: '13 Etsy SEO Tags', body: tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('\n'), cls: 'tags-body', isHtml: true },
+      { icon: '🎨', title: 'Canva Layout Suggestions', body: canva, cls: '' },
+      { icon: '📸', title: 'AI Image Generation Prompts', body: imgPrompts, cls: '' },
+      { icon: '💌', title: 'Wedding Invitation Copy', body: inv.main + (inv.extra ? '\n' + inv.extra : ''), cls: '' },
     ];
 
     cards.forEach(function(c, idx) {
@@ -853,6 +924,7 @@
       groom: document.getElementById('groomName').value,
       date: document.getElementById('weddingDate').value,
       venue: document.getElementById('weddingVenue').value,
+      productType: document.getElementById('productType').value,
       style: document.getElementById('weddingStyle').value,
       color: document.getElementById('colorScheme').value,
       rsvp: document.getElementById('toggleRSVP').classList.contains('on'),
@@ -870,7 +942,8 @@
       if (d.groom)   document.getElementById('groomName').value = d.groom;
       if (d.date)    document.getElementById('weddingDate').value = d.date;
       if (d.venue)   document.getElementById('weddingVenue').value = d.venue;
-      if (d.style)   document.getElementById('weddingStyle').value = d.style;
+      if (d.productType) document.getElementById('productType').value = d.productType;
+      if (d.style)       document.getElementById('weddingStyle').value = d.style;
       if (d.color) {
         document.getElementById('colorScheme').value = d.color;
         document.querySelectorAll('.color-preset').forEach(function(p) {
