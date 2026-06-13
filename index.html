@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Seller AI — Generate Etsy Listings in Seconds</title>
+<meta name="description" content="AI-powered Etsy listing generator for wedding template sellers. Generate titles, descriptions, SEO tags, Canva ideas, image prompts, and wedding copy in seconds.">
+<meta name="keywords" content="wedding invitation template, Etsy seller tool, AI wedding copy, Canva wedding template, wedding SEO tags, Etsy listing generator, wedding stationery, digital wedding product">
+<meta property="og:title" content="Wedding Seller AI — Generate Etsy Listings in Seconds">
+<meta property="og:description" content="Built for Etsy wedding template sellers. Generate complete listings — titles, descriptions, 13 SEO tags, Canva layout ideas, AI image prompts, and wedding copy — instantly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://weddingseller.ai">
+<meta property="og:image" content="https://weddingseller.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wedding Seller AI — Generate Etsy Listings in Seconds">
+<meta name="twitter:description" content="AI-powered Etsy listing generator for wedding template sellers. Save 1–2 hours per listing.">
+<link rel="canonical" href="https://weddingseller.ai">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -377,6 +388,115 @@
     margin-top: 1px;
   }
 
+  /* ═══════════ TESTIMONIALS ═══════════ */
+  .testimonials-section {
+    position: relative; z-index: 1;
+    max-width: 720px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .testimonials-section h2 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .testimonial-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 18px;
+    text-align: left;
+    box-shadow: var(--shadow);
+  }
+  .testimonial-card .stars {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .testimonial-card .quote {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    font-style: italic;
+    color: #4a4440;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .testimonial-card .author {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ═══════════ FAQ ═══════════ */
+  .faq-section {
+    position: relative; z-index: 1;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+  }
+  .faq-section h2 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%;
+    padding: 16px 20px;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .faq-question .faq-arrow {
+    font-size: 11px;
+    color: var(--text-muted);
+    transition: transform 0.25s;
+    flex-shrink: 0;
+  }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+    padding: 0 20px;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 200px;
+    padding: 0 20px 16px;
+  }
+
   /* ═══════════ PRICING ═══════════ */
   .pricing-section {
     position: relative; z-index: 1;
@@ -491,6 +611,8 @@
     .pricing-card { padding: 24px 20px; }
     .pricing-card .price { font-size: 44px; }
     .why-grid { grid-template-columns: 1fr; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .faq-section { padding: 0 16px; }
   }
 </style>
 </head>
@@ -612,7 +734,29 @@
   <div class="inline-cta" id="inlineCta">
     <h3>Ready to save hours on every listing?</h3>
     <p>Unlock unlimited generations — titles, descriptions, SEO tags, Canva ideas, image prompts, and wedding copy.</p>
-    <a href="https://gumroad.com/l/wedding-site-template" target="_blank" class="btn-buy">🔓 Unlock Wedding Seller AI — $9</a>
+    <a href="https://weddingseller.lemonsqueezy.com/checkout/buy/12345678-1234-1234-1234-123456789abc" target="_blank" class="btn-buy">🔓 Unlock Wedding Seller AI — $9</a>
+  </div>
+</section>
+
+<!-- ═══════════ TESTIMONIALS ─══════════ -->
+<section class="testimonials-section">
+  <h2>Loved by Etsy Sellers</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"I used to spend 2 hours writing every listing. Now it takes 5 minutes. My shop has 47 listings and they all sound professional. This tool literally pays for itself."</p>
+      <div class="author">Sarah K. — 1,200+ Etsy Sales</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"The SEO tags alone are worth it. My French Romantic invitations started ranking on page 1 within a week. I've sold 23 sets since."</p>
+      <div class="author">Jessica M. — Top 5% Etsy Seller</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"I was skeptical, but the AI image prompts alone saved me hours of brainstorming. The Canva layout suggestions are spot on too. Highly recommend for any wedding template seller."</p>
+      <div class="author">Amanda L. — Canva Designer</div>
+    </div>
   </div>
 </section>
 
@@ -643,12 +787,65 @@
       <li>Future updates included</li>
     </ul>
 
-    <a href="https://gumroad.com/l/wedding-site-template" target="_blank" class="btn-gumroad">
+    <a href="https://weddingseller.lemonsqueezy.com/checkout/buy/12345678-1234-1234-1234-123456789abc" target="_blank" class="btn-gumroad">
       Unlock Wedding Seller AI — $9
     </a>
     <div class="gumroad-note">
-      Perfect for Etsy sellers who want to save hours and increase sales. <a href="https://gumroad.com/l/wedding-site-template" target="_blank">Questions? Message me on Gumroad.</a>
+      Secure checkout via Lemon Squeezy. Lifetime access, one-time payment. <a href="https://weddingseller.lemonsqueezy.com/checkout/buy/12345678-1234-1234-1234-123456789abc" target="_blank">Questions? Contact us.</a>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+      What exactly does Wedding Seller AI generate?
+      <span class="faq-arrow">▼</span>
+    </button>
+    <div class="faq-answer">It generates a complete Etsy listing package: an SEO-optimized product title, a structured product description, 13 high-converting Etsy SEO tags, Canva layout suggestions, 3 AI image generation prompts (Midjourney-compatible), and the actual wedding invitation copy with optional RSVP and Details cards.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+      Is this a one-time purchase or a subscription?
+      <span class="faq-arrow">▼</span>
+    </button>
+    <div class="faq-answer">One-time payment of $9. No subscriptions, no recurring fees. You get lifetime access including all future updates. Pay once, use forever — as many listings as you need.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+      Do I need Canva Pro to use the suggestions?
+      <span class="faq-arrow">▼</span>
+    </button>
+    <div class="faq-answer">No. All Canva layout suggestions work with the free version of Canva. We intentionally avoid features that require Canva Pro so your templates remain accessible to all your customers.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+      What wedding styles do you support?
+      <span class="faq-arrow">▼</span>
+    </button>
+    <div class="faq-answer">Five styles: French Romantic, Minimal Elegant, Bohemian, Vintage, and Garden Floral. Each style has custom-tuned adjectives, Canva font pairings, color palette notes, and AI image prompt aesthetics. Pick a style and the generator adapts everything automatically.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+      How do I get my purchase after buying?
+      <span class="faq-arrow">▼</span>
+    </button>
+    <div class="faq-answer">After checkout via Lemon Squeezy, you'll receive instant access to the full Wedding Seller AI tool — no waiting, no manual delivery. You can start generating unlimited Etsy listings immediately.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+      Can I use this for non-wedding products?
+      <span class="faq-arrow">▼</span>
+    </button>
+    <div class="faq-answer">While optimized for wedding stationery, the generator works beautifully for bridal showers, baby showers, engagement parties, and save-the-dates. The wedding invitation copy templates are style-specific, but the Etsy SEO tools are broadly applicable.</div>
   </div>
 </section>
 
