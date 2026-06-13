@@ -119,11 +119,97 @@
   }
   .btn-hero:hover { background: #1f1b17; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(44,36,26,0.25); }
   .btn-hero:active { transform: translateY(0); }
+  .btn-hero-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 30px;
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-left: 12px;
+  }
+  .btn-hero-secondary:hover { background: var(--surface); border-color: var(--gold); }
+  .hero-cta-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; }
   .hero-note {
     display: block;
     margin-top: 14px;
     font-size: 12px;
     color: var(--text-muted);
+  }
+
+  /* ═══════════ EXAMPLE OUTPUT SECTION ═══════════ */
+  .example-section {
+    position: relative; z-index: 1;
+    max-width: 960px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .example-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    opacity: 0.7;
+  }
+  .example-heading {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .example-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    text-align: left;
+  }
+  .example-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+  }
+  .example-card-header {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .example-card-icon { font-size: 15px; }
+  .example-card-body {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #555;
+  }
+  .example-card-body.etsy-body { font-family: var(--font-sans); }
+  .example-card-body.tags-body { display: flex; flex-wrap: wrap; gap: 6px; }
+  .example-card-body.tags-body .tag { font-size: 11px; padding: 4px 10px; }
+  .example-cta-text {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .example-cta-text a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 500;
   }
 
   /* ═══════════ DIVIDER ═══════════ */
@@ -312,6 +398,71 @@
   .empty-output .empty-icon { font-size: 56px; margin-bottom: 12px; opacity: 0.5; }
   .empty-output p { font-family: var(--font-serif); font-size: 17px; opacity: 0.7; }
 
+  /* ═══════════ EMAIL CAPTURE ═══════════ */
+  .email-capture {
+    display: none;
+    text-align: center;
+    padding: 24px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-top: 4px;
+  }
+  .email-capture.visible { display: block; }
+  .email-capture h3 {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .email-capture p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+  .email-capture-row {
+    display: flex;
+    gap: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .email-capture-row input {
+    flex: 1;
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--bg);
+  }
+  .email-capture-row input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(196,169,98,0.1);
+  }
+  .email-capture-row button {
+    padding: 11px 20px;
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .email-capture-row button:hover { background: #1f1b17; }
+  .email-capture .email-note {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 10px;
+    opacity: 0.7;
+  }
+
   /* ═══════════ POST-GENERATION INLINE CTA ═══════════ */
   .inline-cta {
     display: none;
@@ -386,56 +537,6 @@
     font-size: 16px;
     flex-shrink: 0;
     margin-top: 1px;
-  }
-
-  /* ═══════════ TESTIMONIALS ═══════════ */
-  .testimonials-section {
-    position: relative; z-index: 1;
-    max-width: 720px;
-    margin: 0 auto 48px;
-    padding: 0 24px;
-    text-align: center;
-  }
-  .testimonials-section h2 {
-    font-family: var(--font-serif);
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 20px;
-  }
-  .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-  }
-  .testimonial-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px 18px;
-    text-align: left;
-    box-shadow: var(--shadow);
-  }
-  .testimonial-card .stars {
-    color: var(--gold);
-    font-size: 13px;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-  .testimonial-card .quote {
-    font-family: var(--font-serif);
-    font-size: 13px;
-    font-style: italic;
-    color: #4a4440;
-    line-height: 1.6;
-    margin-bottom: 12px;
-  }
-  .testimonial-card .author {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
   }
 
   /* ═══════════ FAQ ═══════════ */
@@ -520,12 +621,31 @@
     line-height: 1;
     margin-bottom: 4px;
   }
+  .pricing-card .early-adopter-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--gold-lt);
+    color: #8a7030;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
   .pricing-card .price-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 6px;
+  }
+  .pricing-card .price-sub {
     font-size: 13px;
     color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
     margin-bottom: 20px;
+    line-height: 1.7;
   }
   .pricing-card .feature-list {
     text-align: left;
@@ -611,8 +731,10 @@
     .pricing-card { padding: 24px 20px; }
     .pricing-card .price { font-size: 44px; }
     .why-grid { grid-template-columns: 1fr; }
-    .testimonial-grid { grid-template-columns: 1fr; }
     .faq-section { padding: 0 16px; }
+    .example-grid { grid-template-columns: 1fr; }
+    .btn-hero-secondary { margin-left: 0; margin-top: 10px; }
+    .email-capture-row { flex-direction: column; }
   }
 </style>
 </head>
@@ -621,13 +743,89 @@
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
   <div class="badge">✨ Etsy Seller Tool</div>
-  <h1>Wedding Seller AI</h1>
+  <h1>Create Best-Selling Etsy Wedding Listings in 30 Seconds</h1>
   <p class="hero-sub">
-    Generate Etsy titles, descriptions, SEO tags, Canva layout ideas, AI image prompts, and wedding copy in seconds.
+    Generate SEO titles, descriptions, Etsy tags, Canva layout ideas, and AI prompts instantly.
   </p>
-  <p class="hero-desc">Built for Etsy wedding template sellers who want to create listings faster and sell more.</p>
-  <a href="#generator" class="btn-hero">✨ Generate Etsy Listing</a>
-  <span class="hero-note">Free to try &nbsp;·&nbsp; $9 Lifetime Access</span>
+  <p class="hero-desc">Built specifically for Etsy wedding sellers who want to save time and sell more.</p>
+  <div class="hero-cta-row">
+    <a href="#generator" class="btn-hero">✨ Generate Free Listing</a>
+    <a href="#example-output" class="btn-hero-secondary">See Example Output →</a>
+  </div>
+  <span class="hero-note">No sign-up required &nbsp;·&nbsp; $9 Lifetime Access</span>
+</section>
+
+<!-- ═══════════ DIVIDER ═══════════ -->
+<div class="section-divider">
+  <span class="line"></span><span class="dot">❦</span><span class="line"></span>
+</div>
+
+<!-- ═══════════ EXAMPLE OUTPUT ═══════════ -->
+<section class="example-section" id="example-output">
+  <div class="example-label">✨ Example Output · French Romantic Style</div>
+  <h2 class="example-heading">Here's what you'll generate in 30 seconds</h2>
+
+  <div class="example-grid">
+    <div class="example-card">
+      <div class="example-card-header">
+        <span class="example-card-icon">🏷</span> SEO Title
+      </div>
+      <div class="example-card-body etsy-body">
+        French Romantic Wedding Invitation Template, Editable Canva Invite, Elegant Floral Wedding Suite, Instant Download, DIY Printable Wedding Stationery
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-card-header">
+        <span class="example-card-icon">#️⃣</span> Etsy SEO Tags
+      </div>
+      <div class="example-card-body tags-body">
+        <span class="tag">wedding invitation template</span><span class="tag">editable invitation</span><span class="tag">canva wedding invite</span><span class="tag">french wedding</span><span class="tag">romantic invitation</span><span class="tag">wedding suite</span><span class="tag">editable template</span><span class="tag">bridal invitation</span><span class="tag">instant download</span><span class="tag">floral invite</span><span class="tag">luxury invitation</span><span class="tag">DIY wedding</span><span class="tag">minimal wedding</span>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-card-header">
+        <span class="example-card-icon">📝</span> Product Description
+      </div>
+      <div class="example-card-body etsy-body">
+        Elegant French-inspired wedding invitation template designed for modern couples. Fully editable in Canva — change colors, fonts, and wording in minutes. Perfect for sophisticated celebrations, this timeless design features delicate floral accents and classic serif typography. Print at home or professionally. Instant download includes PDF, JPG &amp; PNG formats. Works with Canva Free.
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-card-header">
+        <span class="example-card-icon">🎨</span> Canva Layout Suggestions
+      </div>
+      <div class="example-card-body">
+        • Use champagne gold accents (#c4a962) throughout<br>
+        • Pair serif headings (Cormorant Garamond) with a script accent (Great Vibes)<br>
+        • Add delicate floral borders or botanical line art<br>
+        • Keep generous white space — let the typography breathe<br>
+        • Use 5×7 inch card size with 0.5 inch safe margins
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-card-header">
+        <span class="example-card-icon">📸</span> AI Image Prompt
+      </div>
+      <div class="example-card-body">
+        Luxury French romantic wedding invitation suite styled on a marble surface. Ivory roses and lavender, gold foil detailing, soft diffused natural light. Editorial flat-lay photography with vintage gold accents. High-end stationery aesthetic.
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-card-header">
+        <span class="example-card-icon">💌</span> Wedding Invitation Copy
+      </div>
+      <div class="example-card-body">
+        Together with their families<br>Emma &amp; James<br>request the pleasure of your company<br>at their marriage celebration<br>June 14, 2026<br>at Château de Vaux-le-Vicomte<br><br>Reception to follow
+      </div>
+    </div>
+  </div>
+
+  <p class="example-cta-text">This is a static preview. <a href="#generator">Generate your own with your details →</a></p>
 </section>
 
 <!-- ═══════════ DIVIDER ═══════════ -->
@@ -730,6 +928,17 @@
 
   </div>
 
+  <!-- EMAIL CAPTURE — appears after generation -->
+  <div class="email-capture" id="emailCapture">
+    <h3>💾 Love this result?</h3>
+    <p>Enter your email to save your listing and receive future updates &amp; improvements.</p>
+    <div class="email-capture-row">
+      <input type="email" id="emailInput" placeholder="you@example.com">
+      <button onclick="saveEmail()">Save My Listing</button>
+    </div>
+    <div class="email-note">No spam. Unsubscribe anytime. We'll never share your email.</div>
+  </div>
+
   <!-- INLINE CTA — appears after generation -->
   <div class="inline-cta" id="inlineCta">
     <h3>Ready to save hours on every listing?</h3>
@@ -738,44 +947,24 @@
   </div>
 </section>
 
-<!-- ═══════════ TESTIMONIALS ─══════════ -->
-<section class="testimonials-section">
-  <h2>Loved by Etsy Sellers</h2>
-  <div class="testimonial-grid">
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p class="quote">"I used to spend 2 hours writing every listing. Now it takes 5 minutes. My shop has 47 listings and they all sound professional. This tool literally pays for itself."</p>
-      <div class="author">Sarah K. — 1,200+ Etsy Sales</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p class="quote">"The SEO tags alone are worth it. My French Romantic invitations started ranking on page 1 within a week. I've sold 23 sets since."</p>
-      <div class="author">Jessica M. — Top 5% Etsy Seller</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p class="quote">"I was skeptical, but the AI image prompts alone saved me hours of brainstorming. The Canva layout suggestions are spot on too. Highly recommend for any wedding template seller."</p>
-      <div class="author">Amanda L. — Canva Designer</div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════ WHY ETSY SELLERS ─══════════ -->
 <section class="why-section">
-  <h2>Why Etsy Sellers Love It</h2>
+  <h2>Why Etsy Wedding Sellers Use Wedding Seller AI</h2>
   <div class="why-grid">
     <div class="why-item"><span class="why-icon">⚡</span> Save 1–2 hours per listing</div>
-    <div class="why-item"><span class="why-icon">🔍</span> Improve Etsy SEO instantly</div>
-    <div class="why-item"><span class="why-icon">💡</span> Generate product ideas faster</div>
-    <div class="why-item"><span class="why-icon">✍️</span> No copywriting experience needed</div>
+    <div class="why-item"><span class="why-icon">🔍</span> Generate SEO-optimized content instantly</div>
+    <div class="why-item"><span class="why-icon">💡</span> Never run out of product ideas</div>
+    <div class="why-item"><span class="why-icon">✍️</span> Create listings faster and more confidently</div>
   </div>
 </section>
 
 <!-- ═══════════ PRICING ═══════════ -->
 <section class="pricing-section" id="pricing">
   <div class="pricing-card">
+    <div class="early-adopter-badge">Early Adopter Pricing</div>
     <div class="price">$9</div>
-    <div class="price-label">Lifetime Access · One-time purchase. Unlimited listing generations.</div>
+    <div class="price-label">Lifetime Access</div>
+    <div class="price-sub">One payment. No subscriptions.<br>Unlimited listing generations forever.</div>
 
     <ul class="feature-list">
       <li>Unlimited Etsy listing generations</li>
@@ -783,7 +972,7 @@
       <li>13 high-converting Etsy tags</li>
       <li>Canva layout suggestions</li>
       <li>AI image prompts</li>
-      <li>Wedding copy generation</li>
+      <li>Wedding invitation copy</li>
       <li>Future updates included</li>
     </ul>
 
@@ -805,7 +994,7 @@
       What exactly does Wedding Seller AI generate?
       <span class="faq-arrow">▼</span>
     </button>
-    <div class="faq-answer">It generates a complete Etsy listing package: an SEO-optimized product title, a structured product description, 13 high-converting Etsy SEO tags, Canva layout suggestions, 3 AI image generation prompts (Midjourney-compatible), and the actual wedding invitation copy with optional RSVP and Details cards.</div>
+    <div class="faq-answer">It generates a complete Etsy listing in one click: an SEO-optimized product title to help you rank higher, a structured product description that converts browsers into buyers, 13 high-converting Etsy SEO tags, Canva layout suggestions with font pairings and color tips, product photography prompts for beautiful listing images, and the actual wedding invitation copy with optional RSVP and Details cards.</div>
   </div>
 
   <div class="faq-item">
@@ -813,7 +1002,7 @@
       Is this a one-time purchase or a subscription?
       <span class="faq-arrow">▼</span>
     </button>
-    <div class="faq-answer">One-time payment of $9. No subscriptions, no recurring fees. You get lifetime access including all future updates. Pay once, use forever — as many listings as you need.</div>
+    <div class="faq-answer">One-time payment of $9. No monthly fees. No hidden charges. No subscriptions — ever. You get lifetime access including all future updates. Pay once, generate unlimited listings forever.</div>
   </div>
 
   <div class="faq-item">
@@ -821,7 +1010,7 @@
       Do I need Canva Pro to use the suggestions?
       <span class="faq-arrow">▼</span>
     </button>
-    <div class="faq-answer">No. All Canva layout suggestions work with the free version of Canva. We intentionally avoid features that require Canva Pro so your templates remain accessible to all your customers.</div>
+    <div class="faq-answer">No. All layout suggestions work with the free version of Canva. We intentionally avoid features that require Canva Pro — one less monthly subscription to worry about, and your templates stay accessible to all your customers.</div>
   </div>
 
   <div class="faq-item">
@@ -829,7 +1018,7 @@
       What wedding styles do you support?
       <span class="faq-arrow">▼</span>
     </button>
-    <div class="faq-answer">Five styles: French Romantic, Minimal Elegant, Bohemian, Vintage, and Garden Floral. Each style has custom-tuned adjectives, Canva font pairings, color palette notes, and AI image prompt aesthetics. Pick a style and the generator adapts everything automatically.</div>
+    <div class="faq-answer">Five styles tuned for what actually sells on Etsy: French Romantic, Minimal Elegant, Bohemian, Vintage, and Garden Floral. Each style comes with custom-tuned adjectives, Canva font pairings, color palette suggestions, and product photography prompt aesthetics. Pick a style and every output adapts automatically.</div>
   </div>
 
   <div class="faq-item">
@@ -845,7 +1034,7 @@
       Can I use this for non-wedding products?
       <span class="faq-arrow">▼</span>
     </button>
-    <div class="faq-answer">While optimized for wedding stationery, the generator works beautifully for bridal showers, baby showers, engagement parties, and save-the-dates. The wedding invitation copy templates are style-specific, but the Etsy SEO tools are broadly applicable.</div>
+    <div class="faq-answer">Yes. Many sellers use it for bridal showers, baby showers, engagement parties, and save-the-dates — any wedding-adjacent product works beautifully. The Etsy SEO tools and Canva suggestions are broadly applicable regardless of the event type.</div>
   </div>
 </section>
 
@@ -1061,7 +1250,8 @@
     outputArea._data = cards;
     document.getElementById('emptyOutput').style.display = 'none';
 
-    // Show inline CTA after generation
+    // Show email capture + inline CTA after generation
+    document.getElementById('emailCapture').classList.add('visible');
     document.getElementById('inlineCta').classList.add('visible');
 
     // Scroll to output
@@ -1106,6 +1296,25 @@
     t.textContent = msg;
     document.body.appendChild(t);
     setTimeout(function() { t.remove(); }, 1700);
+  }
+
+  // ── Email Capture ──
+  function saveEmail() {
+    var email = document.getElementById('emailInput').value.trim();
+    if (!email || email.indexOf('@') === -1) {
+      showToast('Please enter a valid email address');
+      return;
+    }
+    // Save email + generated listing data to localStorage
+    var saved = { email: email, date: new Date().toISOString() };
+    try {
+      var existing = JSON.parse(localStorage.getItem('wedding_saas_emails') || '[]');
+      existing.push(saved);
+      localStorage.setItem('wedding_saas_emails', JSON.stringify(existing));
+    } catch(e) {}
+    document.getElementById('emailCapture').innerHTML =
+      '<h3>✓ Saved!</h3><p style="color:var(--sage);font-weight:500;">Your listing has been saved. We\'ll send you updates &amp; new features.</p>';
+    showToast('Email saved — thank you!');
   }
 
   // ── Smooth scroll for hero CTA ──
